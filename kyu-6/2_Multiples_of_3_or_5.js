@@ -12,4 +12,16 @@ function solution(number){
   return result;
 }
 
+// Mathematical Optimization (O(1) Solution)
+function sumMultiplesOf3And5(number) {
+  if (number <= 0) return 0;
+
+  function sumDivisibleBy(k) {
+    const p = Math.floor((number - 1) / k);
+    return k * (p * (p + 1)) / 2;
+  }
+
+  return sumDivisibleBy(3) + sumDivisibleBy(5) - sumDivisibleBy(15);
+}
+
 console.log(solution(10));
