@@ -12,3 +12,5 @@ function narcissistic(value) {
 }
 
 console.log(narcissistic(153));
+
+// asnweres to check: https://www.codewars.com/kata/5287e858c6b5a9678200083c/solutions/javascript
