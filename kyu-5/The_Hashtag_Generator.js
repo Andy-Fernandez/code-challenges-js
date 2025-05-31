@@ -1,16 +1,14 @@
 // https://www.codewars.com/kata/52449b062fb80683ec000024/train/javascript
 
 function generateHashtag(str) {
-  if (str.trim() === '') {
-    return false;
-  }
-  const words = str.split(/\s+/);
-  const hashtag = '#' + words.map(word => word[0].toUpperCase() + word.slice(1,word.length)).join('');
-  if (hashtag.length > 140 ) {
-    return false;
-  } else {
-    return hashtag;
-  }
+  if (str.trim() === '') return false;
+
+  const words = str.trim().split(/\s+/);
+  const hashtag = '#' + words
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join('');
+
+  return hashtag.length > 140 ? false : hashtag;
 }
 
 export default generateHashtag;
