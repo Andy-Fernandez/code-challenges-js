@@ -3,9 +3,13 @@ function pigIt(str){
   // puedo tener mas de una palabra:
   const array = str.split(' ')
   // * Podemos limpiar porque podemos teer muchos casos 
-  const firstWords = array.map(el => el.slice(1) + el.charAt(0) + 'ay');
+  const firstWords = array.map(el => {
+    if (/^[!?.,]$/.test(el)) return el;
+    return el.slice(1) + el.charAt(0) + 'ay'
+  });
   return firstWords.join(' ');
 }
 
 console.log(pigIt('Pig latin is cool'));
 console.log(pigIt('This is my string'));
+console.log(pigIt('This is my string !'));
